@@ -21,6 +21,15 @@ public class Enemy : MonoBehaviour
     float timerRDRT = 0;
     Detector detector;
 
+    [SerializeField] float hitFlashTime = 0.5f;
+    float timerHitFlash = 0f;
+    bool inHitFlash = false;
+
+    [SerializeField] float deadTime = 0.5f;
+    float timerDead = 0f;
+
+    SpriteRenderer sr;
+
     #region debug
     [SerializeField] bool KillIt = false;
     #endregion
@@ -54,6 +63,7 @@ public class Enemy : MonoBehaviour
     void OnKill()
     {
         isAlive = false;
+        timerDead = deadTime;
         DropRandomItem();
         this.GetComponent<Rigidbody2D>().simulated = false;
         Destroy(this.gameObject, 1.0f);
@@ -78,7 +88,10 @@ public class Enemy : MonoBehaviour
         {
             float effect = Util.CalcElementEffect(type, elementType);
             health -= (int)(effect * value);
-            //todo : onhit
+
+            inHitFlash = true;
+            timerHitFlash = hitFlashTime;
+
             if (health <= 0)
             {
                 OnKill();
@@ -124,6 +137,7 @@ public class Enemy : MonoBehaviour
         //target = GameObject.FindGameObjectWithTag("Player");
         detector = this.GetComponentInChildren<Detector>();
         EnemyBirthControl.Instance.CountUp();
+        sr = this.GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -132,8 +146,25 @@ public class Enemy : MonoBehaviour
         if (isAlive)
         {
             DefaultMove();
+            target = detector.GetTarget();
+            if (inHitFlash)
+            {
+                timerHitFlash -= Time.deltaTime;
+                if (timerHitFlash <= 0)
+                {
+                    timerHitFlash = 0;
+                    inHitFlash = false;
+                }
+                sr.color = new Color(1, 1 - timerHitFlash / hitFlashTime, 1 - timerHitFlash / hitFlashTime);
+            }
         }
-        target = detector.GetTarget();
+        else
+        {
+            timerDead -= Time.deltaTime;
+            sr.color = new Color(timerDead / deadTime, timerDead / deadTime, timerDead / deadTime, timerDead / deadTime);
+            Debug.Log(sr.color);
+        }
+        
     }
 
     private void OnDestroy()

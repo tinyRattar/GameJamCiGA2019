@@ -12,7 +12,7 @@ Shader "Unity Shaders Book/Chapter 12/Edge Detection"
 		SubShader
 		{
 			Pass{
-				ZTest Always Cull Off ZWrite Off
+				
 				CGPROGRAM
 	#pragma vertex vert 
 	#pragma fragment frag
@@ -79,7 +79,7 @@ Shader "Unity Shaders Book/Chapter 12/Edge Detection"
 
 		fixed4 withEdgeColor = lerp(_EdgeColor, tex2D(_MainTex, i.uv[4]), edge);
 		fixed4 onlyEdgeColor = lerp(_EdgeColor, _BackgroundColor, edge);
-		return lerp(withEdgeColor, onlyEdgeColor, _EdgeOnly);
+		return fixed4(1.0, 1.0, 1.0, 1.0);
 		}
 		ENDCG
 }
