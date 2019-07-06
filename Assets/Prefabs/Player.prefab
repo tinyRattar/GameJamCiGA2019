@@ -147,14 +147,11 @@ MonoBehaviour:
   - 1
   - 1
   - 1
-  nextSkill:
+  timerCold:
   - 0
   - 0
   - 0
-  showColdTime:
-  - 0
-  - 0
-  - 0
+  listSkillNum: 050000000500000005000000
 --- !u!50 &5562204877443193825
 Rigidbody2D:
   serializedVersion: 4

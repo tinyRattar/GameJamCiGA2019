@@ -15,6 +15,7 @@ public class UISkill : MonoBehaviour
 
     [SerializeField] Image CDMask;
     [SerializeField] Image HLMask;
+    [SerializeField] Text txtNum;
     [SerializeField] bool isCD = false;
     HLState hlState = HLState.Idle;
     [SerializeField] float CDTime = 1f;
@@ -32,6 +33,11 @@ public class UISkill : MonoBehaviour
         CDTime = time;
         timerCD = CDTime;
         isCD = true;
+    }
+
+    public void SetNum(int num)
+    {
+        txtNum.text = num.ToString();
     }
 
     void ShowHighlight()

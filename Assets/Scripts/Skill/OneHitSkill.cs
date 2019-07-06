@@ -10,12 +10,10 @@ public class OneHitSkill: MonoBehaviour
     {
         if (listHitedObjects.Contains(target))
         {
-            Debug.Log("hit twice more");
             return false;
         }
         else
         {
-            Debug.Log("hit first time");
             listHitedObjects.Add(target);
             return true;
         }

@@ -18,12 +18,27 @@ public class Player_Control : MonoBehaviour
     public List<float> coldTime;
     int index = 0;
     public List<float> timerCold;
+    public List<int> listSkillNum;
 
     UISkillManager uiSkillManager;
+
+    void UpdateUISkillNum()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            uiSkillManager.SetSkillNum(i, listSkillNum[i]);
+        }
+    }
+
+    private void Awake()
+    {
+        uiSkillManager = GameObject.Find("UISkillManager").GetComponent<UISkillManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        uiSkillManager = GameObject.Find("UISkillManager").GetComponent<UISkillManager>();
+        UpdateUISkillNum();
     }
 
     // Update is called once per frame
@@ -86,6 +101,8 @@ public class Player_Control : MonoBehaviour
     }
     void SkillShot(int i)
     {
+        if (listSkillNum[i] <= 0)
+            return;
         GameObject item=null;
         if (i == 0)
         {
@@ -104,9 +121,9 @@ public class Player_Control : MonoBehaviour
         {
             Instantiate(item, transform.position, transform.rotation);//将预制体生成对象
             timerCold[i] = coldTime[i];
-        }
-        else
-        { 
+            uiSkillManager.StartSkillCD(i, coldTime[i]);
+            listSkillNum[i] -= 1;
+            UpdateUISkillNum();
         }
     }
 

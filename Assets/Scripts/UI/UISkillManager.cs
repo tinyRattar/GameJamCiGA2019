@@ -11,6 +11,11 @@ public class UISkillManager : MonoBehaviour
         listUISkill[index].StartCD(cdTime);
     }
 
+    public void SetSkillNum(int index, int num)
+    {
+        listUISkill[index].SetNum(num);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

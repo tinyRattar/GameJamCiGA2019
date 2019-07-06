@@ -5,13 +5,23 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public virtual void OnTaken(Collider2D collision) { }
+    bool canTaken = true;
+
+    public virtual void OnTaken(Collider2D collision)
+    {
+        this.GetComponent<Animation>().Play();
+        canTaken = false;
+        Destroy(this.gameObject, 1.5f);
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (canTaken)
         {
-            OnTaken(collision);
+            if (collision.tag == "Player")
+            {
+                OnTaken(collision);
+            }
         }
     }
 }

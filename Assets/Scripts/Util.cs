@@ -13,9 +13,9 @@ public enum ElementType
 public static class Util
 {
     static float[][] gridElementEffect = new float[][]{
-        new float[] { -1, 0, 1 },
-        new float[] { 1, -1, 0 },
-        new float[] { 0, 1, -1 },
+        new float[] { 1, -0.25f, -0.25f },
+        new float[] { -0.25f, 1, -0.25f },
+        new float[] { -0.25f, -0.25f, 1 },
     };
 
     public static float CalcElementEffect(ElementType src, ElementType tar)

@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] List<GameObject> dropItemList;
     [SerializeField] List<float> dropItemPropList;
     float timerRDRT = 0;
+    Detector detector;
 
     #region debug
     [SerializeField] bool KillIt = false;
@@ -54,6 +55,7 @@ public class Enemy : MonoBehaviour
     {
         isAlive = false;
         DropRandomItem();
+        this.GetComponent<Rigidbody2D>().simulated = false;
         Destroy(this.gameObject, 1.0f);
     }
 
@@ -119,7 +121,8 @@ public class Enemy : MonoBehaviour
             totalDropItemProp += prop;
         }
         health = maxHealth;
-        target = GameObject.FindGameObjectWithTag("Player");
+        //target = GameObject.FindGameObjectWithTag("Player");
+        detector = this.GetComponentInChildren<Detector>();
     }
 
     // Update is called once per frame
@@ -134,5 +137,6 @@ public class Enemy : MonoBehaviour
             KillIt = false;
             OnKill();
         }
+        target = detector.GetTarget();
     }
 }

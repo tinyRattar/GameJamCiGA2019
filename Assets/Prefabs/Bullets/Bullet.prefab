@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07aad13fb74ec2f419af04e3267887b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackValue: 35
+  attackValue: 100
   elementType: 0
   bullet_speed: 0.3
   lifeTime: 5
