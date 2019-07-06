@@ -55,7 +55,15 @@ public class BloodCTRL : MonoBehaviour
             print(healthPos);
             add.transform.localPosition = healthPos;
             //float newWidth=250
-            add.GetComponent<RectTransform>().sizeDelta = new Vector2(bloodChange / 100 * 500, 50);
+            img.fillAmount += bloodChange / 100;
+            if (img.fillAmount < 1)
+            {
+                add.GetComponent<RectTransform>().sizeDelta = new Vector2(bloodChange / 100 * 500, 50);
+            }
+            else
+            {
+                add.GetComponent<RectTransform>().sizeDelta = new Vector2((img.fillAmount-1) * 500, 50);
+            }
             add.SetActive(true);
             StartCoroutine(HealthAdd());
         }
@@ -76,14 +84,15 @@ public class BloodCTRL : MonoBehaviour
     }
     IEnumerator HealthAdd()
     {
+
         Image imgAdd = add.GetComponent<Image>();
-        while (imgAdd.fillAmount <1)
+        while (imgAdd.fillAmount >0)
         {
-            imgAdd.fillAmount += speed;
+            imgAdd.fillAmount -= speed;
             yield return 0;
         }
         add.SetActive(false);
         imgAdd.fillAmount = 0;
-        img.fillAmount += bloodChange / 100;
+
     }
 }

@@ -203,7 +203,7 @@ MonoBehaviour:
   - 5
   - 5
   - 5
-  - 15
+  - 9999
   KillIt: 0
 --- !u!58 &8474325857727457414
 CircleCollider2D:

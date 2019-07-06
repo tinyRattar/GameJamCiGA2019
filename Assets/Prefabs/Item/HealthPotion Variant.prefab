@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab6b0a14be96544c962e1555667d61c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthValue: 50
+  healthValue: 50
 --- !u!1001 &5801557513216042349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23,7 +23,7 @@ PrefabInstance:
     - target: {fileID: 6778464234085116436, guid: 44508b2b1183ab448b84afef60be0825,
         type: 3}
       propertyPath: m_Name
-      value: HealthPotion
+      value: HealthPotion Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6778464234085116437, guid: 44508b2b1183ab448b84afef60be0825,
         type: 3}

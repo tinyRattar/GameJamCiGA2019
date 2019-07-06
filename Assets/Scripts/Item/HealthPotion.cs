@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class HealthPotion : Item
 {
-    [SerializeField] int HealthValue;
+    [SerializeField] int healthValue;
 
     public override void OnTaken(Collider2D collision)
     {
         base.OnTaken(collision);
+        Player_Control.Instance.player_health += healthValue;
+        BloodCTRL.bloodChange = healthValue;
+        BloodCTRL.flag_add = true;
         //todo: health up
     }
 
