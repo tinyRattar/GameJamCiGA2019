@@ -23,7 +23,7 @@ public static class Util
         if (src == ElementType.None || tar == ElementType.None)
             return 1f;
         else
-            return gridElementEffect[(int)src][(int)tar];
+            return gridElementEffect[(int)src-1][(int)tar-1];
     }
 
 }

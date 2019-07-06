@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8474325857308607388}
   m_Layer: 0
   m_Name: image
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aab5bfd6790c2f44bf3a4a41a54c8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   elementType: 1
   maxHealth: 100
   moveSpeed: 1

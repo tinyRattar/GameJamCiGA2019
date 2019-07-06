@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3693550174239310893
+--- !u!1001 &4899531295387275602
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8474325857727457410, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
       propertyPath: m_Name
-      value: EvilSoul_Fire Variant
+      value: EvilSoul_Wind Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8474325857727457412, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
@@ -67,20 +67,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8474325857727457413, guid: 80d641134c6618948adbbda3c462ec25,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.5176237
       objectReference: {fileID: 0}
     - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.3537736
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.3537736
+      value: 0.4764151
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d641134c6618948adbbda3c462ec25, type: 3}
