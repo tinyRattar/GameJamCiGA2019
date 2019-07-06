@@ -65,12 +65,14 @@ public class Player_Control : MonoBehaviour
             index--;
             if (index < 0)
                 index = 2;
+            UIWeaponManager.Instance.SwitchLeft();
         }
         if (Input.GetKeyDown(KeyCode.E))//右切武器移动
         {
             index++;
             if (index > 2)
                 index = 0;
+            UIWeaponManager.Instance.SwitchRight();
         }
         if (Time.time > nextTime + time_rate)
         {
