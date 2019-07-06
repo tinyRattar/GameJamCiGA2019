@@ -36,7 +36,6 @@ public class UIWeapon : MonoBehaviour
         sourceScale = this.transform.localScale;
         timerSwitch = switchTime;
         onSwitch = true;
-        Debug.Log(this.gameObject.name + sourcePos + targetPos);
     }
 
     // Start is called before the first frame update
