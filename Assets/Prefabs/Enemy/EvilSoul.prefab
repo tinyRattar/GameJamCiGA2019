@@ -193,15 +193,17 @@ MonoBehaviour:
   moveSpeed: 1
   randomDirectionResetTime: 3
   dropItemList:
-  - {fileID: 1050100259808137081, guid: 5f8a4ec19295ba44bbb2584a4795ed30, type: 3}
-  - {fileID: 1050100259808137081, guid: 5f8a4ec19295ba44bbb2584a4795ed30, type: 3}
-  - {fileID: 6025432643111463068, guid: c6f1bea72376c70448396f76a08da2ce, type: 3}
   - {fileID: 0}
+  - {fileID: 6025432643111463068, guid: c6f1bea72376c70448396f76a08da2ce, type: 3}
+  - {fileID: 2031837904814338812, guid: 105fdc87bb6c37a40b5c6df4f4f0b849, type: 3}
+  - {fileID: 1016665379728636372, guid: 337c033ffc4d64c49a3027e8c152e542, type: 3}
+  - {fileID: 1050100259808137081, guid: 5f8a4ec19295ba44bbb2584a4795ed30, type: 3}
   dropItemPropList:
+  - 60
   - 5
   - 5
   - 5
-  - 0
+  - 15
   KillIt: 0
 --- !u!58 &8474325857727457414
 CircleCollider2D:

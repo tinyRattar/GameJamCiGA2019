@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Control : MonoBehaviour
 {
+    public static Player_Control Instance;
     public float play_speed = 1;
 
     public List<GameObject> goBullet;
@@ -22,6 +23,12 @@ public class Player_Control : MonoBehaviour
 
     UISkillManager uiSkillManager;
 
+    public void AddSkillNum(int index, int value)
+    {
+        listSkillNum[index] += value;
+        UpdateUISkillNum();
+    }
+
     void UpdateUISkillNum()
     {
         for (int i = 0; i < 3; i++)
@@ -32,6 +39,15 @@ public class Player_Control : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogError("More Than two instance");
+        }
+        
         uiSkillManager = GameObject.Find("UISkillManager").GetComponent<UISkillManager>();
     }
 

@@ -16,6 +16,7 @@ public class SkillBox : Item
     public override void OnTaken(Collider2D collision)
     {
         base.OnTaken(collision);
+        Player_Control.Instance.AddSkillNum((int)skillType, 1);
         //todo: add skill
     }
 
