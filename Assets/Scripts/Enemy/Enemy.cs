@@ -155,7 +155,7 @@ public class Enemy : MonoBehaviour
                     timerHitFlash = 0;
                     inHitFlash = false;
                 }
-                sr.color = new Color(1, 1 - timerHitFlash / hitFlashTime, 1 - timerHitFlash / hitFlashTime);
+                sr.color = new Color(1 - timerHitFlash / hitFlashTime, 1 - timerHitFlash / hitFlashTime, 1 - timerHitFlash / hitFlashTime);
             }
         }
         else
