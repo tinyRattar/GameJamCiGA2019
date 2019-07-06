@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EvilSoul_Wind Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8474325857727457413, guid: 80d641134c6618948adbbda3c462ec25,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8474325857727457412, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,15 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8474325857727457413, guid: 80d641134c6618948adbbda3c462ec25,
-        type: 3}
-      propertyPath: elementType
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.5176237
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
@@ -85,7 +85,13 @@ PrefabInstance:
     - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.4764151
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cca4ce4f791e6a24bb9f0628079f0e6d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d641134c6618948adbbda3c462ec25, type: 3}

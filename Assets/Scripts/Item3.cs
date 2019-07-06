@@ -21,10 +21,19 @@ public class Item3 : OneHitSkill
         Vector2 bulletPos = transform.position;
         fwd = mousPos - bulletPos;
         fwd = fwd.normalized;
-        if(fwd.x>0)
+        if (fwd.x > 0)
+        {
             transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(fwd.y / fwd.x) * Mathf.Rad2Deg);
+        }
         else
-            transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(fwd.y / fwd.x) * Mathf.Rad2Deg+180);
+        {
+            transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(fwd.y / fwd.x) * Mathf.Rad2Deg + 180);
+            foreach (GameObject go in bo)
+            {
+                go.GetComponent<SpriteRenderer>().flipY = true;
+            }
+        }
+            
     }
 
     // Update is called once per frame
@@ -37,7 +46,7 @@ public class Item3 : OneHitSkill
         if (Time.time > nextTime)
         {
             nextTime += time_rate;
-            if (cnt < 5)
+            if (cnt < bo.Count)
             {
                 bo[cnt].SetActive(true);
                 cnt++;
