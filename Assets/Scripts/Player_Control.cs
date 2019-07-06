@@ -24,15 +24,15 @@ public class Player_Control : MonoBehaviour
         {
             transform.position += transform.up * play_speed ;
         }
-        else if(Input.GetKey(KeyCode.S))//下移动
+        if(Input.GetKey(KeyCode.S))//下移动
         {
             transform.position += -transform.up * play_speed;
         }
-        else if (Input.GetKey(KeyCode.A))//左移动
+        if (Input.GetKey(KeyCode.A))//左移动
         {
             transform.position += -transform.right * play_speed;
         }
-        else if (Input.GetKey(KeyCode.D))//右移动
+        if (Input.GetKey(KeyCode.D))//右移动
         {
             transform.position += transform.right * play_speed;
         }
