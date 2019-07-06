@@ -16,9 +16,8 @@ public class Player_Control : MonoBehaviour
     private float nextTime;
 
     public List<float> coldTime;
-    public List<float> nextSkill;
     int index = 0;
-    public List<float> showColdTime;
+    public List<float> timerCold;
 
     UISkillManager uiSkillManager;
     // Start is called before the first frame update
@@ -78,6 +77,12 @@ public class Player_Control : MonoBehaviour
             SkillShot(1);
         if (Input.GetKeyDown(KeyCode.Alpha3))
             SkillShot(2);
+        for (int i = 0; i < 3; i++)
+        {
+            timerCold[i] -= Time.deltaTime;
+            if (timerCold[i] < -10f)
+                timerCold[i] = 0;
+        }
     }
     void SkillShot(int i)
     {
@@ -95,15 +100,13 @@ public class Player_Control : MonoBehaviour
             item = goSkill3[index];
         }
 
-        if (Time.time > nextSkill[i])
+        if (timerCold[i] < 0)
         {
             Instantiate(item, transform.position, transform.rotation);//将预制体生成对象
-            nextSkill[i] += coldTime[i];
+            timerCold[i] = coldTime[i];
         }
         else
-        {
-            showColdTime[i] = nextSkill[i] - Time.time;
-            //print(nextSkill - Time.time);
+        { 
         }
     }
 
