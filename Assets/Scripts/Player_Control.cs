@@ -19,10 +19,12 @@ public class Player_Control : MonoBehaviour
     public List<float> nextSkill;
     int index = 0;
     public List<float> showColdTime;
+
+    UISkillManager uiSkillManager;
     // Start is called before the first frame update
     void Start()
     {
-
+        uiSkillManager = GameObject.Find("UISkillManager").GetComponent<UISkillManager>();
     }
 
     // Update is called once per frame
@@ -102,6 +104,7 @@ public class Player_Control : MonoBehaviour
             {
                 Instantiate(item, transform.position, transform.rotation);//将预制体生成对象
                 nextSkill[i] += coldTime[i];
+                uiSkillManager.StartSkillCD(i,coldTime[i]);
             }
         }
         else

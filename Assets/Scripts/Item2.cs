@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item2 : MonoBehaviour
+public class Item2 : OneHitSkill
 {
     Vector3 fwd;
     public GameObject boom;

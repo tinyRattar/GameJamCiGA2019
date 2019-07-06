@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4911223858649670227, guid: d7f2af40bbe894c469b1b470aa1d3d83,
         type: 3}
       propertyPath: m_Name
-      value: item1 Wind
+      value: item1 Wind Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4911223858649670226, guid: d7f2af40bbe894c469b1b470aa1d3d83,
         type: 3}
@@ -216,6 +216,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858261769791005, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858261754583109, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858259949768962, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858261542227772, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858261848552660, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858261582181852, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858260457070639, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858260749274896, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693858260499070658, guid: d7f2af40bbe894c469b1b470aa1d3d83,
+        type: 3}
+      propertyPath: elementType
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7f2af40bbe894c469b1b470aa1d3d83, type: 3}
