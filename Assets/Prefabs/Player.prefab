@@ -130,12 +130,31 @@ MonoBehaviour:
   - {fileID: 6708268325594590333, guid: 284f63c077df5e7408b4f1497c5b4a50, type: 3}
   - {fileID: 9060328102137111530, guid: d5b1f752537bc5e458e4f38f7f0b13f0, type: 3}
   - {fileID: 4553283492646411162, guid: 42b33212c298786439b452b957ee30b1, type: 3}
-  goSkill:
-  - {fileID: 4911223858649670227, guid: d7f2af40bbe894c469b1b470aa1d3d83, type: 3}
-  - {fileID: 681132662326329412, guid: bc22ac5e68b018b408fee7bd6a15061e, type: 3}
-  - {fileID: 4061293250962969662, guid: df6b1e26c756a114aaf68a14ea0e1f5a, type: 3}
+  goSkill1:
+  - {fileID: 4494263729185586920, guid: 2c269267ee0d7874887085a8cd8df6a5, type: 3}
+  - {fileID: 8494627451051455120, guid: de00af7d3de06f4449fe33039ca000ba, type: 3}
+  - {fileID: 3577257214085751525, guid: 13c97e9f52bac584d9ae96e5064b53a0, type: 3}
+  goSkill2:
+  - {fileID: 616381639897993666, guid: 4c1de8704e5af304aa446122f1c82d0d, type: 3}
+  - {fileID: 6547422977284394232, guid: a22b76a63c15d8e43a2a9831d27f7efb, type: 3}
+  - {fileID: 8596147608424170165, guid: a2799a587d0bdda4bb2ede7ab8477ad0, type: 3}
+  goSkill3:
+  - {fileID: 7622703115002948394, guid: 5f3b9111e237dca48b3bc9d71ff14b02, type: 3}
+  - {fileID: 1123892643945846224, guid: 9eea7ca9b2cb90945a2f02de81a691b4, type: 3}
+  - {fileID: 4632774445979653548, guid: 55d571b33a057b3469151a578e69262e, type: 3}
   time_rate: 0.2
-  coldTime: 1
+  coldTime:
+  - 5
+  - 5
+  - 5
+  nextSkill:
+  - 0
+  - 0
+  - 0
+  showColdTime:
+  - 0
+  - 0
+  - 0
 --- !u!50 &5562204877443193825
 Rigidbody2D:
   serializedVersion: 4
