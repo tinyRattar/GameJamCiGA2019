@@ -45,6 +45,8 @@ public class Player_Hit : MonoBehaviour
                 BloodCTRL.bloodChange = -10;
                 BloodCTRL.flag_cut = true;
                 backGlod.SetActive(true);
+                int index = Random.Range(5, 15);
+                SEManager.Instance.PlaySE(index);
             }
         }
         

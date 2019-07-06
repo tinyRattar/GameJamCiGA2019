@@ -10,6 +10,7 @@ public class Player_LookAt : MonoBehaviour
     public List<Sprite> sp = new List<Sprite>();
     public List<GameObject> guns = new List<GameObject>();
     SpriteRenderer sr;
+    public GameObject backGlod;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,25 +23,42 @@ public class Player_LookAt : MonoBehaviour
         playerPos = this.gameObject.transform.position;
         mousPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         fwd = -playerPos + mousPos;
+        SpriteRenderer[] sps = backGlod.GetComponentsInChildren<SpriteRenderer>();
         if ((fwd.x + fwd.y) > 0 && (fwd.y - fwd.x) < 0)
         {
             GunShow(0);
             sr.sprite = sp[0];
+            foreach(SpriteRenderer temp in sps)
+            {
+                temp.sprite = sp[0];
+            }
         }
         else if ((fwd.x + fwd.y) < 0 && (fwd.y - fwd.x) < 0)
         {
             GunShow(1);
             sr.sprite = sp[1];
+            foreach (SpriteRenderer temp in sps)
+            {
+                temp.sprite = sp[1];
+            }
         }
         else if ((fwd.x + fwd.y) < 0 && (fwd.y - fwd.x) > 0)
         {
             GunShow(2);
             sr.sprite = sp[2];
+            foreach (SpriteRenderer temp in sps)
+            {
+                temp.sprite = sp[2];
+            }
         }
         else if ((fwd.x + fwd.y) > 0 && (fwd.y - fwd.x) > 0)
         {
             GunShow(3);
             sr.sprite = sp[3];
+            foreach (SpriteRenderer temp in sps)
+            {
+                temp.sprite = sp[3];
+            }
         }
     }
     void GunShow(int index)

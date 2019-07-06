@@ -63,4 +63,9 @@ public class Portal : MonoBehaviour
     {
         DefaultGenerateBehaviour();
     }
+
+    private void OnDestroy()
+    {
+        PortalMissionManager.Instance.NumChange(-1);
+    }
 }

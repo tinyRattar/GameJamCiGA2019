@@ -86,6 +86,8 @@ public class Enemy : MonoBehaviour
     {
         if (isAlive)
         {
+            int index = Random.Range(0, 5);
+            SEManager.Instance.PlaySE(index);
             float effect = Util.CalcElementEffect(type, elementType);
             health -= (int)(effect * value);
 

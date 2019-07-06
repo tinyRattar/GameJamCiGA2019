@@ -148,8 +148,10 @@ public class Player_Control : MonoBehaviour
     }
     void SkillShot(int i)
     {
+        
         if (listSkillNum[i] <= 0)
             return;
+        SEManager.Instance.PlaySE(i + 15);
         GameObject item=null;
         if (i == 0)
         {
