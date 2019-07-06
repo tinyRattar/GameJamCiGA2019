@@ -233,7 +233,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1502523114
 Canvas:
@@ -735,8 +735,8 @@ MonoBehaviour:
   enemyPropList:
   - 100
   - 2.5
-  - 25
   - 2.5
+  - 25
 --- !u!114 &6805814892319157393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,6 +785,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2541056140321751133}
   - component: {fileID: 2541056140321751130}
+  - component: {fileID: 1043886101}
   m_Layer: 0
   m_Name: image
   m_TagString: Untagged
@@ -843,7 +844,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ca267ef1d4cbf8a40882e4ffa7f6d401, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e07547f093f3dc46a2bcd62aea3d8a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -854,3 +855,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &1043886101
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541056140321751132}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 2ea04216b3fd2c44b8d9443a4105dced, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 2ea04216b3fd2c44b8d9443a4105dced, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

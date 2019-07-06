@@ -24,12 +24,12 @@ public class UIWeapon : MonoBehaviour
         targetPos = tarPos;
         if (toEnable)
         {
-            targetColor = new Color(0.5f, 0.5f, 0.5f, 0f);
+            targetColor = new Color(0.4f, 0.4f, 0.4f, 0f);
             targetScale = new Vector3(1.4f, 1.4f, 1f);
         }
         else
         {
-            targetColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+            targetColor = new Color(0.4f, 0.4f, 0.4f, 1f);
             targetScale = new Vector3(1f, 1f, 1f);
         }
         sourceColor = mask.color;

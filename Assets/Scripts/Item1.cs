@@ -7,9 +7,10 @@ public class Item1 : OneHitSkill
     Vector3 fwd;
     public GameObject core;
     public GameObject boom;
-    public float speed = 0.01f;
+    public float speed = 2f;
     Vector2 corePos;
     public float distance = 2f;
+    public float flyTime = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,22 +18,34 @@ public class Item1 : OneHitSkill
         corePos = transform.position;
         fwd = mousPos - corePos;
         fwd = fwd.normalized;
+        this.GetComponent<Animation>().Play();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(flyTime > Time.deltaTime)
+        {
+            this.transform.Translate(fwd * speed * Time.deltaTime);
+            flyTime -= Time.deltaTime;
+        }
+        else if (flyTime>0)
+        {
+            this.transform.Translate(fwd * speed * flyTime);
+            flyTime = 0f;
+        }
+        /*
         if (Vector2.Distance(core.transform.position, corePos) < distance)
         {
-            core.transform.Translate(fwd * speed);
+            core.transform.Translate(fwd * speed * Time.deltaTime);
         }
         else
         {
-            boom.transform.position = core.transform.position;
-            core.SetActive(false);
-            boom.SetActive(true);
-            StartCoroutine(Show()); 
-        }
+            //boom.transform.position = core.transform.position;
+            //core.SetActive(false);
+            //boom.SetActive(true);
+            //StartCoroutine(Show()); 
+        }*/
     }
 
     IEnumerator Show()

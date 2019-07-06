@@ -162,7 +162,6 @@ public class Enemy : MonoBehaviour
         {
             timerDead -= Time.deltaTime;
             sr.color = new Color(timerDead / deadTime, timerDead / deadTime, timerDead / deadTime, timerDead / deadTime);
-            Debug.Log(sr.color);
         }
         
     }

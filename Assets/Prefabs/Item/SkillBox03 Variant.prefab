@@ -23,7 +23,7 @@ PrefabInstance:
     - target: {fileID: 6778464234085116436, guid: 44508b2b1183ab448b84afef60be0825,
         type: 3}
       propertyPath: m_Name
-      value: SkillBox03
+      value: SkillBox03 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6778464234085116437, guid: 44508b2b1183ab448b84afef60be0825,
         type: 3}
@@ -80,6 +80,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6778464234302674297, guid: 44508b2b1183ab448b84afef60be0825,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bbf97a343f23934990c83fb064ed88c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44508b2b1183ab448b84afef60be0825, type: 3}
 --- !u!1 &1016665379728636372 stripped

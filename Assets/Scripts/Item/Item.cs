@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
 
     public virtual void OnTaken(Collider2D collision)
     {
-        this.GetComponent<Animation>().Play();
+        this.GetComponent<Animation>().Play("ItemTaken");
         canTaken = false;
         Destroy(this.gameObject, 1.5f);
     }

@@ -6,6 +6,7 @@ public class SkillEffectBox : MonoBehaviour
 {
     [SerializeField] int attackValue = 10;
     [SerializeField] ElementType elementType = ElementType.None;
+    [SerializeField] bool hitOnce = true;
 
     bool isWork = true;
     OneHitSkill skill;
@@ -46,7 +47,13 @@ public class SkillEffectBox : MonoBehaviour
                 {
                     OnHit();
                 }
-            } 
+            } else if (!hitOnce)
+            {
+                if (collision.GetComponent<Enemy>().OnHit(attackValue, elementType))
+                {
+                    OnHit();
+                }
+            }
         }
     }
 }

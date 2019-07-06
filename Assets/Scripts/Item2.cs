@@ -19,7 +19,10 @@ public class Item2 : OneHitSkill
         fwd = mousPos - corePos;
         fwd = fwd.normalized;
 
+        
         angle = Mathf.Atan(fwd.y / fwd.x);
+        if (fwd.x < 0)
+            angle += Mathf.PI;
         boom.transform.eulerAngles = new Vector3(0, 0, angle * Mathf.Rad2Deg);
 
     }
@@ -29,13 +32,19 @@ public class Item2 : OneHitSkill
     {
         if (Vector2.Distance(transform.position, corePos) < distance)
         {
-            transform.Translate(fwd * speed);
+            //transform.Translate(fwd * speed);
         }
         else
         {
+            Destroy(this.gameObject);
             //boom.SetActive(false);
-            StartCoroutine(Show());
+            //StartCoroutine(Show());
         }
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(this.gameObject);
     }
     IEnumerator Show()
     {
