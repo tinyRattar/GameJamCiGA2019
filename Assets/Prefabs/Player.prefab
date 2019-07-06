@@ -144,9 +144,9 @@ MonoBehaviour:
   - {fileID: 4632774445979653548, guid: 55d571b33a057b3469151a578e69262e, type: 3}
   time_rate: 0.2
   coldTime:
-  - 5
-  - 5
-  - 5
+  - 1
+  - 1
+  - 1
   nextSkill:
   - 0
   - 0
