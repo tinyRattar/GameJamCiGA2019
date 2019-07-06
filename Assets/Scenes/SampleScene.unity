@@ -152,8 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   play_speed: 0.1
-  goBullet: {fileID: 2944415412905377653, guid: 53e6e0017a0ce5847b48d6325cdea89d,
-    type: 3}
+  goBullet: []
   time_rate: 0.2
 --- !u!4 &212420597
 Transform:

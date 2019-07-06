@@ -5,7 +5,6 @@ using UnityEngine;
 public class Item3 : MonoBehaviour
 {
     Vector3 fwd;
-    public GameObject item;
     public GameObject boom;
     public List<GameObject> bo = new List<GameObject>();
     public float speed = 0.01f;
@@ -42,7 +41,7 @@ public class Item3 : MonoBehaviour
             }
             else
             {
-                Destroy(item, 0.5f);
+                Destroy(this.gameObject, 0.5f);
             }
         }
     }

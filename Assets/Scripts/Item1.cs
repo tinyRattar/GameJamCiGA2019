@@ -8,7 +8,6 @@ public class Item1 : MonoBehaviour
     public GameObject core;
     public GameObject boom;
     public float speed = 0.01f;
-    public GameObject item;
     Vector2 corePos;
     public float distance = 2f;
     // Start is called before the first frame update
@@ -32,7 +31,7 @@ public class Item1 : MonoBehaviour
             boom.transform.position = core.transform.position;
             core.SetActive(false);
             boom.SetActive(true);
-            Destroy(item, 0.5f);
+            Destroy(this.gameObject, 0.5f);
         }
     }
 }

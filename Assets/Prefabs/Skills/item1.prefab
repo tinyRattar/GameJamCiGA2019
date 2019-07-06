@@ -87,6 +87,7 @@ MonoBehaviour:
   core: {fileID: 3864735799593341583}
   boom: {fileID: 4911223858314904703}
   speed: 0.1
+  item: {fileID: 4911223858649670227}
   distance: 2
 --- !u!1001 &4911223858642795100
 PrefabInstance:

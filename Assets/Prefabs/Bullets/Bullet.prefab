@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackValue: 35
-  elementType: 1
+  elementType: 0
   bullet_speed: 0.3
   lifeTime: 5
 --- !u!58 &6276477867521855053
