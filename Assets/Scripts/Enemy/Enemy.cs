@@ -123,6 +123,7 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
         //target = GameObject.FindGameObjectWithTag("Player");
         detector = this.GetComponentInChildren<Detector>();
+        EnemyBirthControl.Instance.CountUp();
     }
 
     // Update is called once per frame
@@ -132,11 +133,11 @@ public class Enemy : MonoBehaviour
         {
             DefaultMove();
         }
-        if (KillIt)
-        {
-            KillIt = false;
-            OnKill();
-        }
         target = detector.GetTarget();
+    }
+
+    private void OnDestroy()
+    {
+        EnemyBirthControl.Instance.CountDown();
     }
 }

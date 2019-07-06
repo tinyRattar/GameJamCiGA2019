@@ -35,14 +35,17 @@ public class Portal : MonoBehaviour
 
     void DefaultGenerateBehaviour()
     {
-        if (timerGenerate <= 0)
+        if (EnemyBirthControl.Instance.hasRest)
         {
-            GenerateRandomEnemy();
-            timerGenerate = generateIntervalTime;
-        }
-        else
-        {
-            timerGenerate -= Time.deltaTime;
+            if (timerGenerate <= 0)
+            {
+                GenerateRandomEnemy();
+                timerGenerate = generateIntervalTime;
+            }
+            else
+            {
+                timerGenerate -= Time.deltaTime;
+            }
         }
     }
 

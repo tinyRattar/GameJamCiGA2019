@@ -58,17 +58,41 @@ public class Player_Control : MonoBehaviour
         UpdateUISkillNum();
     }
 
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.W))//上移动
+        {
+            //transform.position += transform.up * play_speed * Time.deltaTime ;
+            this.transform.Translate(Vector3.up * play_speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.S))//下移动
+        {
+            //ransform.position += -transform.up * play_speed * Time.deltaTime;
+            this.transform.Translate(Vector3.down * play_speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A))//左移动
+        {
+            //transform.position += -transform.right * play_speed * Time.deltaTime;
+            this.transform.Translate(Vector3.left * play_speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))//右移动
+        {
+            //transform.position += transform.right * play_speed * Time.deltaTime;
+            this.transform.Translate(Vector3.right * play_speed * Time.deltaTime);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))//左切武器移动
+        if (Input.GetKeyDown(KeyCode.E))//左切武器移动
         {
             index--;
             if (index < 0)
                 index = 2;
             UIWeaponManager.Instance.SwitchLeft();
         }
-        if (Input.GetKeyDown(KeyCode.E))//右切武器移动
+        if (Input.GetKeyDown(KeyCode.Q))//右切武器移动
         {
             index++;
             if (index > 2)
@@ -88,23 +112,27 @@ public class Player_Control : MonoBehaviour
                 bullet = Instantiate(goBullet[index], transform.position, transform.rotation);//将预制体生成对象
             }
         }
-
+        /*
         if (Input.GetKey(KeyCode.W))//上移动
         {
-            transform.position += transform.up * play_speed ;
+            //transform.position += transform.up * play_speed * Time.deltaTime ;
+            this.transform.Translate(Vector3.up * play_speed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.S))//下移动
         {
-            transform.position += -transform.up * play_speed;
+            //ransform.position += -transform.up * play_speed * Time.deltaTime;
+            this.transform.Translate(Vector3.down * play_speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A))//左移动
         {
-            transform.position += -transform.right * play_speed;
+            //transform.position += -transform.right * play_speed * Time.deltaTime;
+            this.transform.Translate(Vector3.left * play_speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))//右移动
         {
-            transform.position += transform.right * play_speed;
-        }
+            //transform.position += transform.right * play_speed * Time.deltaTime;
+            this.transform.Translate(Vector3.right * play_speed * Time.deltaTime);
+        }*/
         if(Input.GetKeyDown(KeyCode.Alpha1))
             SkillShot(0);
         if (Input.GetKeyDown(KeyCode.Alpha2))

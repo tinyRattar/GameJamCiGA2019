@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 8474325857727457412}
   - component: {fileID: 8474325857727457413}
   - component: {fileID: 8474325857727457414}
-  - component: {fileID: 8474325857727457415}
+  - component: {fileID: -286292115801962101}
   m_Layer: 0
   m_Name: EvilSoul
   m_TagString: Enemy
@@ -221,7 +221,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &8474325857727457415
+--- !u!50 &-286292115801962101
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
