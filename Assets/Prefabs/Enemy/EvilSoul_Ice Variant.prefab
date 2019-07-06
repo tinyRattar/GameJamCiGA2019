@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8474325857727457410, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
       propertyPath: m_Name
-      value: EvilSoul_Ice
+      value: EvilSoul_Ice Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8474325857727457412, guid: 80d641134c6618948adbbda3c462ec25,
         type: 3}
@@ -71,6 +71,21 @@ PrefabInstance:
         type: 3}
       propertyPath: elementType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.32226774
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8742143
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474325857308607388, guid: 80d641134c6618948adbbda3c462ec25,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9622642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d641134c6618948adbbda3c462ec25, type: 3}

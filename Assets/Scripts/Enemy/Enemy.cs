@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     int health;
-    GameObject target;
+    [SerializeField] GameObject target;
     Vector2 defaultMoveDirection;
     float defaultMoveSpeedScale = 1.0f;
     float totalDropItemProp = 0;
@@ -103,6 +103,11 @@ public class Enemy : MonoBehaviour
             }
             this.transform.Translate(defaultMoveDirection * moveSpeed * Time.deltaTime * defaultMoveSpeedScale);
         }
+        else
+        {
+            Vector3 direct = (target.transform.position - this.transform.position).normalized;
+            this.transform.Translate(direct * moveSpeed * Time.deltaTime);
+        }
     }
 
 
@@ -114,6 +119,7 @@ public class Enemy : MonoBehaviour
             totalDropItemProp += prop;
         }
         health = maxHealth;
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
