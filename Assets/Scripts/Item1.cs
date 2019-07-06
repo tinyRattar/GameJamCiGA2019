@@ -14,15 +14,15 @@ public class Item1 : MonoBehaviour
     void Start()
     {
         Vector2 mousPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 bulletPos = transform.position;
-        fwd = mousPos - bulletPos;
+        corePos = transform.position;
+        fwd = mousPos - corePos;
         fwd = fwd.normalized;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(core.transform.position, corePos)< distance)
+        if (Vector2.Distance(core.transform.position, corePos) < distance)
         {
             core.transform.Translate(fwd * speed);
         }

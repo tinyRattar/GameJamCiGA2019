@@ -14,8 +14,8 @@ public class Item2 : MonoBehaviour
     void Start()
     {
         Vector2 mousPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 bulletPos = transform.position;
-        fwd = mousPos - bulletPos;
+        corePos = transform.position;
+        fwd = mousPos - corePos;
         fwd = fwd.normalized;
         transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(fwd.y / fwd.x) * Mathf.Rad2Deg);
     }

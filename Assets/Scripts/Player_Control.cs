@@ -7,16 +7,22 @@ public class Player_Control : MonoBehaviour
     public float play_speed = 1;
 
     public List<GameObject> goBullet;
+    public List<GameObject> goSkill1;
+    public List<GameObject> goSkill2;
+    public List<GameObject> goSkill3;
     private GameObject bullet;
 
     public float time_rate=1;
     private float nextTime;
 
+    public List<float> coldTime;
+    public List<float> nextSkill;
     int index = 0;
+    public List<float> showColdTime;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -64,9 +70,44 @@ public class Player_Control : MonoBehaviour
         {
             transform.position += transform.right * play_speed;
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1))//技能1
+        for (int i = 0; i < 3; i++)
+            SkillShot(i);
+    }
+    void SkillShot(int i)
+    {
+        KeyCode kc= KeyCode.Alpha1;
+        GameObject item=null;
+        if (i == 0)
         {
-            
+            kc = KeyCode.Alpha1;
+            item = goSkill1[index];
+        }
+        else if (i == 1)
+        {
+            kc = KeyCode.Alpha2;
+            item = goSkill2[index];
+        }
+        else if (i == 2)
+        {
+            kc = KeyCode.Alpha3;
+            item = goSkill3[index];
+        }
+        if (Time.time > nextSkill[i] + coldTime[i])
+        {
+            nextSkill[i] = Time.time;
+        }
+        else if (Time.time > nextSkill[i])
+        {
+            if (Input.GetKeyDown(kc))//技能1
+            {
+                Instantiate(item, transform.position, transform.rotation);//将预制体生成对象
+                nextSkill[i] += coldTime[i];
+            }
+        }
+        else
+        {
+            showColdTime[i] = nextSkill[i] - Time.time;
+            //print(nextSkill - Time.time);
         }
     }
 
