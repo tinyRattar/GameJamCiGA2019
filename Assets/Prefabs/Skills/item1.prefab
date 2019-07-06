@@ -84,11 +84,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7e85d4443ec78459c1126744c339d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listHitedObjects: []
   core: {fileID: 3864735799593341583}
   boom: {fileID: 4911223858314904703}
   speed: 0.1
-  item: {fileID: 4911223858649670227}
-  distance: 2
+  distance: 4
 --- !u!1001 &4911223858642795100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -251,6 +251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boom
       objectReference: {fileID: 0}
+    - target: {fileID: 5116586604837227380, guid: c359a8c3c39bc9c4aad1ebdff1da15b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3277847645947799627, guid: c359a8c3c39bc9c4aad1ebdff1da15b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -305,6 +310,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041548228792188677, guid: c359a8c3c39bc9c4aad1ebdff1da15b4,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041548228792188677, guid: c359a8c3c39bc9c4aad1ebdff1da15b4,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041548228792188677, guid: c359a8c3c39bc9c4aad1ebdff1da15b4,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c359a8c3c39bc9c4aad1ebdff1da15b4, type: 3}

@@ -6,7 +6,7 @@ public class Item2 : OneHitSkill
 {
     Vector3 fwd;
     public GameObject boom;
-    public float speed = 0.01f;
+    public float speed = 0.1f;
 
     Vector2 corePos;
     public float distance = 2f;
@@ -34,7 +34,37 @@ public class Item2 : OneHitSkill
         else
         {
             //boom.SetActive(false);
-            Destroy(this.gameObject, 0.5f);
+            StartCoroutine(Show());
         }
+    }
+    IEnumerator Show()
+    {
+        SpriteRenderer[] sp = boom.GetComponentsInChildren<SpriteRenderer>();
+        int len = sp.Length;
+        while (sp[0].color.a > 0)
+        {
+            foreach (SpriteRenderer ssp in sp)
+            {
+                ssp.color = new Color(ssp.color.r, ssp.color.g, ssp.color.b, ssp.color.a - 0.05f);
+            }
+            yield return 0;
+        }
+        while (sp[0].color.a < 1)
+        {
+            foreach (SpriteRenderer ssp in sp)
+            {
+                ssp.color = new Color(ssp.color.r, ssp.color.g, ssp.color.b, ssp.color.a + 0.05f);
+            }
+            yield return 0;
+        }
+        while (sp[0].color.a > 0)
+        {
+            foreach (SpriteRenderer ssp in sp)
+            {
+                ssp.color = new Color(ssp.color.r, ssp.color.g, ssp.color.b, ssp.color.a - 0.1f);
+            }
+            yield return 0;
+        }
+        Destroy(this.gameObject, 0.5f);
     }
 }

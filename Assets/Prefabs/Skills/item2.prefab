@@ -77,9 +77,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24234ef686087ca409dffbeb152f9501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listHitedObjects: []
   boom: {fileID: 681132661816406522}
-  speed: 0.01
-  distance: 2
+  speed: 0.1
+  distance: 4
 --- !u!1001 &681132661706295025
 PrefabInstance:
   m_ObjectHideFlags: 0

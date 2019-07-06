@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7965158f094a6b646b7c407fc6e869ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listHitedObjects: []
   boom: {fileID: 4061293250964312447}
   bo:
   - {fileID: 9177589304854808569}
@@ -54,7 +55,7 @@ MonoBehaviour:
   speed: 0.01
   distance: 2
   timeLast: 0.5
-  time_rate: 1
+  time_rate: 0.5
 --- !u!1 &4061293250964312447
 GameObject:
   m_ObjectHideFlags: 0

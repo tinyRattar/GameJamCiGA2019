@@ -31,7 +31,38 @@ public class Item1 : OneHitSkill
             boom.transform.position = core.transform.position;
             core.SetActive(false);
             boom.SetActive(true);
-            Destroy(this.gameObject, 0.5f);
+            StartCoroutine(Show()); 
         }
+    }
+
+    IEnumerator Show()
+    {
+        SpriteRenderer[] sp = boom.GetComponentsInChildren<SpriteRenderer>();
+        int len = sp.Length;
+        while (sp[0].color.a>0)
+        {
+            foreach (SpriteRenderer ssp in sp)
+            {
+                ssp.color = new Color(ssp.color.r, ssp.color.g, ssp.color.b, ssp.color.a - 0.05f);
+            }
+            yield return 0;
+        }
+        while(sp[0].color.a <1)
+        {
+            foreach (SpriteRenderer ssp in sp)
+            {
+                ssp.color = new Color(ssp.color.r, ssp.color.g, ssp.color.b, ssp.color.a + 0.05f);
+            }
+            yield return 0;
+        }
+        while (sp[0].color.a > 0)
+        {
+            foreach (SpriteRenderer ssp in sp)
+            {
+                ssp.color = new Color(ssp.color.r, ssp.color.g, ssp.color.b, ssp.color.a - 0.1f);
+            }
+            yield return 0;
+        }
+        Destroy(this.gameObject, 0.5f);
     }
 }
