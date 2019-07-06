@@ -18,10 +18,13 @@ public class Item3 : MonoBehaviour
     void Start()
     {
         Vector2 mousPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 bulletPos = boom.transform.position;
+        Vector2 bulletPos = transform.position;
         fwd = mousPos - bulletPos;
         fwd = fwd.normalized;
-        boom.transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(fwd.y / fwd.x) * Mathf.Rad2Deg);
+        if(fwd.x>0)
+            transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(fwd.y / fwd.x) * Mathf.Rad2Deg);
+        else
+            transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(fwd.y / fwd.x) * Mathf.Rad2Deg+180);
     }
 
     // Update is called once per frame
