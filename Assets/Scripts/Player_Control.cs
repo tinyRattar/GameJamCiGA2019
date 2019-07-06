@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Control : MonoBehaviour
 {
     public static Player_Control Instance;
+    public float player_health = 100;
     public float play_speed = 1;
 
     public List<GameObject> goBullet;
