@@ -41,9 +41,16 @@ public class Player_BulletShot : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy" && !hasHit)
+        if (!hasHit)
         {
-            if(collision.GetComponent<Enemy>().OnHit(attackValue, elementType))
+            if (collision.tag == "Enemy")
+            {
+                if (collision.GetComponent<Enemy>().OnHit(attackValue, elementType))
+                {
+                    OnHit();
+                }
+            }
+            else if (collision.tag == "Wall")
             {
                 OnHit();
             }
