@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Player_BulletShot : MonoBehaviour
 {
+    [SerializeField] int attackValue = 10;
+    [SerializeField] ElementType elementType = ElementType.None;
+
     Vector3 fwd;
     public float bullet_speed = 0.01f;
     public float lifeTime = 5;
+
+    bool hasHit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +30,23 @@ public class Player_BulletShot : MonoBehaviour
     void DestroySelf(float time)
     {
         Destroy(this.gameObject, time);
+    }
+
+    void OnHit()
+    {
+        //todo: hit effect
+        hasHit = true;
+        Destroy(this.gameObject);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy" && !hasHit)
+        {
+            if(collision.GetComponent<Enemy>().OnHit(attackValue, elementType))
+            {
+                OnHit();
+            }
+        }
     }
 }

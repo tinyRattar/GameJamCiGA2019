@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     Vector2 defaultMoveDirection;
     float defaultMoveSpeedScale = 1.0f;
     float totalDropItemProp = 0;
+    bool isAlive = true;
 
     [SerializeField] ElementType elementType;
     [SerializeField] int maxHealth;
@@ -51,15 +52,39 @@ public class Enemy : MonoBehaviour
 
     void OnKill()
     {
+        isAlive = false;
         DropRandomItem();
         Destroy(this.gameObject, 1.0f);
     }
 
-    public void OnHit(int value, ElementType type = ElementType.None)
+    void ScaleWithHealth()
     {
-        float effect = Util.CalcElementEffect(type, elementType);
-        health += (int)(effect * value);
-        //todo : onhit
+        if (health <= maxHealth)
+        {
+            this.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            float scale = (float)health / maxHealth;
+            this.transform.localScale = new Vector3(scale, scale, 1);
+        }
+    }
+
+    public bool OnHit(int value, ElementType type = ElementType.None)
+    {
+        if (isAlive)
+        {
+            float effect = Util.CalcElementEffect(type, elementType);
+            health -= (int)(effect * value);
+            //todo : onhit
+            if (health <= 0)
+            {
+                OnKill();
+            }
+            ScaleWithHealth();
+            return true;
+        }
+        return false;
     }
 
     public void DefaultMove()
@@ -81,9 +106,6 @@ public class Enemy : MonoBehaviour
     }
 
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -91,12 +113,16 @@ public class Enemy : MonoBehaviour
         {
             totalDropItemProp += prop;
         }
+        health = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        DefaultMove();
+        if (isAlive)
+        {
+            DefaultMove();
+        }
         if (KillIt)
         {
             KillIt = false;
