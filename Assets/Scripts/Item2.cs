@@ -10,6 +10,7 @@ public class Item2 : OneHitSkill
 
     Vector2 corePos;
     public float distance = 2f;
+    float angle = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +18,18 @@ public class Item2 : OneHitSkill
         corePos = transform.position;
         fwd = mousPos - corePos;
         fwd = fwd.normalized;
-        transform.eulerAngles = new Vector3(0, 0, Mathf.Atan(fwd.y / fwd.x) * Mathf.Rad2Deg);
+
+        angle = Mathf.Atan(fwd.y / fwd.x);
+        boom.transform.eulerAngles = new Vector3(0, 0, angle * Mathf.Rad2Deg);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(boom.transform.position, corePos) < distance)
+        if (Vector2.Distance(transform.position, corePos) < distance)
         {
-            boom.transform.Translate(fwd * speed);
+            transform.Translate(fwd * speed);
         }
         else
         {

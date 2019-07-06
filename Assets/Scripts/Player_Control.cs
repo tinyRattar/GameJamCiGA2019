@@ -72,40 +72,33 @@ public class Player_Control : MonoBehaviour
         {
             transform.position += transform.right * play_speed;
         }
-        for (int i = 0; i < 3; i++)
-            SkillShot(i);
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+            SkillShot(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            SkillShot(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SkillShot(2);
     }
     void SkillShot(int i)
     {
-        KeyCode kc= KeyCode.Alpha1;
         GameObject item=null;
         if (i == 0)
         {
-            kc = KeyCode.Alpha1;
-            item = goSkill1[index];
+            item = goSkill1[index]; 
         }
         else if (i == 1)
         {
-            kc = KeyCode.Alpha2;
             item = goSkill2[index];
         }
         else if (i == 2)
         {
-            kc = KeyCode.Alpha3;
             item = goSkill3[index];
         }
-        if (Time.time > nextSkill[i] + coldTime[i])
+
+        if (Time.time > nextSkill[i])
         {
-            nextSkill[i] = Time.time;
-        }
-        else if (Time.time > nextSkill[i])
-        {
-            if (Input.GetKeyDown(kc))//技能1
-            {
-                Instantiate(item, transform.position, transform.rotation);//将预制体生成对象
-                nextSkill[i] += coldTime[i];
-                uiSkillManager.StartSkillCD(i,coldTime[i]);
-            }
+            Instantiate(item, transform.position, transform.rotation);//将预制体生成对象
+            nextSkill[i] += coldTime[i];
         }
         else
         {
