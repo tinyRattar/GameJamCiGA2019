@@ -17,7 +17,7 @@ public class UISkillManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         listUISkill = new List<UISkill>(this.GetComponentsInChildren<UISkill>());
     }
