@@ -10,18 +10,26 @@ public class PortalMissionManager : MonoBehaviour
     [SerializeField] int numRemain = 11;
     [SerializeField] Text text;
     [SerializeField] Text text2;
+    public bool onGameOver = false;
     bool finished = false;
 
     public void NumChange(int value)
     {
-        numRemain += value;
-        text.text = numRemain.ToString();
-        text2.text = numRemain.ToString();
-        if (numRemain <= 0 && !finished)
+        if (onGameOver)
         {
-            Debug.Log("Level Clear");
-            SceneManager.LoadScene(2);
-            finished = true;
+            return;
+        }
+        if(text != null && text2 != null)
+        {
+            numRemain += value;
+            text.text = numRemain.ToString();
+            text2.text = numRemain.ToString();
+            if (numRemain <= 0 && !finished)
+            {
+                Debug.Log("Level Clear");
+                SceneManager.LoadScene(2);
+                finished = true;
+            }
         }
     }
 

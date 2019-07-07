@@ -42,6 +42,7 @@ public class Player_Hit : MonoBehaviour
                 StartCoroutine(BeHitted());
                 nextTime = Time.time;
                 Player_Control.Instance.player_health -= 10;
+                Player_Control.Instance.GameOverCheck();
                 BloodCTRL.bloodChange = -10;
                 BloodCTRL.flag_cut = true;
                 backGlod.SetActive(true);

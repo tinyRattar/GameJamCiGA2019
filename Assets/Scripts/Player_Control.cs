@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
@@ -23,6 +24,16 @@ public class Player_Control : MonoBehaviour
     public List<int> listSkillNum;
 
     UISkillManager uiSkillManager;
+
+    public void GameOverCheck()
+    {
+        if (player_health <= 0)
+        {
+            SceneManager.LoadScene(3);
+            PortalMissionManager.Instance.onGameOver = true;
+        }
+            
+    }
 
     public void AddSkillNum(int index, int value)
     {

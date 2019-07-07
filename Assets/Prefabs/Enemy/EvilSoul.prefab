@@ -203,7 +203,7 @@ MonoBehaviour:
   - 5
   - 5
   - 5
-  - 25
+  - 10
   hitFlashTime: 0.5
   deadTime: 0.5
   KillIt: 0
